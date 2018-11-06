@@ -1,2 +1,23 @@
 # alexa-capitalTeller
-This alexa skill tell about capital of states in india (made for inida)
+Alexa skill made with javascript.
+
+#Feature
+The main function of this skill is to teach alexa about capitals of different states in india.
+This is skill is made under built for india program by amazon.
+
+#how to contribute
+Made a function that give informain about a perticulare capital.
+for example: 
+  function information(capital){
+      let info;
+      if(capital === 'Lucknow'){
+          info = 'Some useful information about lucknow'
+      }else if{
+      .
+      .
+      .
+      .
+      return info;
+  }
+Complete this function inside index.js and then make pull request.  
+  
