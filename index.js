@@ -49,6 +49,7 @@ const handlers = {
 		speechOutput = 'Try saying, what is the capital of Goa?';
 		this.emit(":ask", speechOutput, speechOutput);
     },
+	//this is costom intent which triggers when someone specify state name
 	'capital': function () {
 		speechOutput = '';
 
@@ -60,6 +61,7 @@ const handlers = {
 		console.log(stateSlot);
 		let states = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu & Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttarakhand', 'Uttar Pradesh', 'West Bengal'];
 		let type;
+	//this if statement line verify state entity dosent contain any unknown value.	
         if(states.contains(stateSlot)){
             speechOutput = `The capital of ${stateSlot} is ${capital(stateSlot)}. Come back again for more information.`;
             type = ":tell";
@@ -90,6 +92,8 @@ exports.handler = (event, context) => {
 
 //    END of Intent Handlers {} ========================================================================================
 // 3. Helper Function  =================================================================================================
+
+//Function to verify whether given statename is valid and present in state array.(without this function this skill taking 'bye' also as a state)
 Array.prototype.contains = function(obj) {
     var i = this.length;
     while (i--) {
@@ -100,7 +104,7 @@ Array.prototype.contains = function(obj) {
     return false;
 };
 
-//capital function
+//this function return capital of state.
 function capital(state){
     let capital;
     if(state === 'Andhra Pradesh'){
