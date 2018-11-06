@@ -5,7 +5,7 @@ let welcomeReprompt = "Try saying, what is the capital of Uttarakhand?";
 // 2. Skill Code =======================================================================================================
 "use strict";
 const Alexa = require('alexa-sdk');
-const APP_ID = 'amzn1.ask.skill.2063157c-5fbb-45ff-9d3a-194d41a0cc7f';  // TODO replace with your app ID (OPTIONAL).
+const APP_ID = 'App id goes here';  // TODO replace with your app ID (OPTIONAL).
 speechOutput = '';
 const handlers = {
 	'LaunchRequest': function () {
